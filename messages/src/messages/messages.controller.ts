@@ -13,10 +13,11 @@ import { MessagesService } from './messages.service';
 export class MessagesController {
   messagesService: MessagesService;
 
-  constructor() {
+  constructor(messagesService: MessagesService) {
+    this.messagesService = messagesService;
     // DONT DO THIS ON REAL APP
     // USE DEPENDENCY INJECTION
-    this.messagesService = new MessagesService();
+    // this.messagesService = new MessagesService();
   }
 
   @Get()
